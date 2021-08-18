@@ -103,7 +103,7 @@ Footer needs to have links to at least 4 social media networks (icon-font needs 
         <script>
             $(document).ready(function() {
                 $("#myBtn").click(function() {
-                    $("#u").load("../partials/home.html", function(responseTxt, statusTxt, xhr) {
+                    $("#u").load("partials/home.html", function(responseTxt, statusTxt, xhr) {
                         if (statusTxt == "success")
                             return status.text();
                         if (statusTxt == "error")
@@ -116,7 +116,7 @@ Footer needs to have links to at least 4 social media networks (icon-font needs 
         <script>
             $(document).ready(function() {
                 $("#my").click(function() {
-                    $("#u").load("../partials/portfolio.html", function(responseTxt, statusTxt, xhr) {
+                    $("#u").load("partials/portfolio.html", function(responseTxt, statusTxt, xhr) {
                         if (statusTxt == "success")
                             return status.text();
                         if (statusTxt == "error")
