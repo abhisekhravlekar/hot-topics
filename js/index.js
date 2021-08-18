@@ -29,7 +29,7 @@ const loadContent ...
 
 const dd = document.querySelector('.dynamic-data');
 
-const url = 'partials/home.html';
+const url = '../partials/home.html';
 
 fetch(url)
 
