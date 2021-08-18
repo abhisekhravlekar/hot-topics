@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS StyleSheet-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--    Font Awesome-->
+    <script src="https://kit.fontawesome.com/ccf0b0f929.js" crossorigin="anonymous"></script>
+
+    <!--Font Title Font Playfair-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <!--Font Body Font Inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <title>Master Page</title>
+
+</head>
+<body>
+    <!--Task description
+You are going to create a mobile first responsive web-site containing navigation-bar, masthead, main-content and footer. Main-content will be dynamically loaded from HTML partials to the main HTML page. All other contents (navigation-bar, masthead and footer) will be hard-coded inside the main HTML page.
+    -->
+
+    <!--Header
+Header contains logo, nav-bar and masthead with a tag-line. Masthead needs to have a background image that relates to the image inside the first article of main content.-->
+    <div class="header">
+    <div class="logo" >
+
+        <!--Main Content
+The web-site contains 2 pages, home and portfolio page.-->
+        <a href="index.html"> <img src="img/Logo.png" alt=""></a>
+    </div>
+    <nav>
+        <ul class="navigation">
+            <li id="myBtn">Home</li>
+            <li id="my">Portfolio</li>
+        </ul>
+    </nav>
+</div>
+
+    <section id="u" class="dynamic-data"></section>
+
+<!--Footer
+Footer needs to have links to at least 4 social media networks (icon-font needs to be used) and information about company (company-name, address, telephone).-->
+    <div class="contact_us">
+        <h1>Contact Us</h1>
+        <section class="icons">
+        <div class="icon">
+            <span id="location"><i class="fas fa-map-marked-alt"></i></span>
+          <p id="location_text">2280 Ross Street, Toronto</p>
+        </div>
+        <div id="icon2" class="icon">
+            <span id="phone"><i class="fas fa-phone-volume"></i></span>
+          <p id="phone_text">+1-613-555-0145</p>
+        </div>
+        <div id="icon3" class="icon">
+            <span id="mail"><i class="fas fa-envelope-open-text"></i></span>
+          <p id="mail_text">abhisekh@designchef.com</p>
+        </div>
+    </section>
+      </div>
+    
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184552.57289885642!2d-79.51814217485051!3d43.7181556616664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1628497109867!5m2!1sen!2sca" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <footer>
+        <h3>LET'S COLLABORATE</h3>
+    
+            <!-- Social Media Icons -->
+            <div class="social_media">
+                <i class="facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+    
+                <!-- Copyright -->
+        <p class="copyright">&copy 2021 Copyright. All Rights Reserved. <br>
+            <a id="demo"></a>
+        </p>
+    
+        <h5>Abhisekh Ravlekar</h5>
+    
+    </footer>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        
+        
+        <!--REGISTER links FOR CLICK EVENT WITH selectContent AS EVENT HANDLER!-->
+        <script>
+            $(document).ready(function() {
+                $("#myBtn").click(function() {
+                    $("#u").load("../partials/home.html", function(responseTxt, statusTxt, xhr) {
+                        if (statusTxt == "success")
+                            return status.text();
+                        if (statusTxt == "error")
+                            alert("Error: " + xhr.status + ": " + xhr.statusText);
+                    });
+                });
+            });
+        </script>
+    
+        <script>
+            $(document).ready(function() {
+                $("#my").click(function() {
+                    $("#u").load("../partials/portfolio.html", function(responseTxt, statusTxt, xhr) {
+                        if (statusTxt == "success")
+                            return status.text();
+                        if (statusTxt == "error")
+                            alert("Error: " + xhr.status + ": " + xhr.statusText);
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <!--JavaScript-->
+    <script src="js/index.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+</body>
+</html>
